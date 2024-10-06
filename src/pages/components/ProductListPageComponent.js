@@ -37,7 +37,9 @@ const ProductListPageComponent = ({ getProducts, categories }) => {
 
   useEffect(() => {
     if (categoryName) {
-      let categoryAllData = categories.find((item) => item.name === categoryName.replaceAll(",", "/"));
+      let categoryAllData = categories.find(
+        (item) => item.name === categoryName.replaceAll(",", "/")
+      );
       if (categoryAllData) {
         let mainCategory = categoryAllData.name.split("/")[0];
         let index = categories.findIndex((item) => item.name === mainCategory);
